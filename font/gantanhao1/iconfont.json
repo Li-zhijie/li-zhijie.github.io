@@ -1,0 +1,16 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "9748042",
+      "name": "问号/感叹号",
+      "font_class": "iconcopy",
+      "unicode": "e526",
+      "unicode_decimal": 58662
+    }
+  ]
+}
