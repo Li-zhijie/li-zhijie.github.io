@@ -1,0 +1,219 @@
+﻿<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>Lizhijie</title>
+	<link rel="stylesheet" type="text/css" href="font/default/iconfont.css">
+	<link rel="stylesheet" type="text/css" href="font/github/iconfont.css">
+	<link rel="stylesheet" type="text/css" href="font/shigong/iconfont.css">
+	<link rel="stylesheet" type="text/css" href="font/Setting/iconfont.css">
+	<style type="text/css">
+	body,ul,p{
+		margin:0;
+		padding:0;
+	}
+	li{
+		list-style: none;
+	}
+	a:link{
+		text-decoration:none;
+		color:black;
+	}
+	a:visited{
+		color:black;
+	}
+	#canvas{
+		width: 100%;
+		height: 750px;
+		background-color:rgba(246,248,250,1);
+	}
+	#nav{
+		position: absolute;
+		width: 100%;
+		height: 60px;
+		background-color: rgba(36,41,46,1);
+	}
+	#nav .head{
+		position: absolute;
+		width: 40px;
+		height: 40px;
+		left: 40px;
+		top: 10px;
+		opacity: 1;
+		transition: .2s;
+		overflow: hidden;
+		background-color: rgba(36,41,46,1);
+	}
+	#nav .head p{
+		font-size: 15px;
+		float: right;
+		margin-right: 3px;
+		line-height: 40px;
+	}
+	#nav .head img{	
+		position: absolute;
+		z-index: 1;
+		width: 40px;
+		height: 40px;
+		transition: .25s;
+	}
+	#nav .head. img:hover{
+		transition: .25s;
+	}
+	#nav .head:hover{
+		border-radius: 2px;
+		cursor: pointer;
+		border-radius: 3%;
+		box-shadow: 0 0 8px rgba(36,41,46,1) inset;
+		background-color: rgba(222,222,222,1);
+	}
+	#nav .nav_1,#nav .nav_2{
+		position: relative;
+		float: right;
+		right: 30px;
+		top: 10px;
+		width: 100px;
+		height: 40px;
+		overflow: hidden;
+		background-color: none;
+	}
+	#nav .nav_1:hover{
+		cursor: default;
+		z-index: 22;
+		height: 163px;
+		color: black;
+		border-radius: 3px;
+		box-shadow: 0 0px 8px grey inset;
+		background-color: white;
+		transition: .2s;
+	}
+	#nav .nav_1,#nav .nav_2 p{
+		width: 100px;
+		height: 40px;
+		font-size: 17px;
+		text-align: center;
+		line-height: 40px;
+		color: white;
+		transition: .2s;
+	}
+	#nav .nav_1 ul{
+		width: 100%;
+		height: 40px;
+		border-radius: 1px;
+		transition: .1s;
+		background-color: white;
+		
+	}
+	#nav .nav_1 ul:hover{
+		cursor: pointer;
+		transition: .1s;
+		color: pink;
+		box-shadow: 0 0 3px rgba(31,41,46,1) inset;
+	}
+	#nav .nav_2 p:hover{
+		cursor: pointer;
+		color: black;
+		background-color: white;
+		transition: .2s;
+	}
+	#welcom{
+		position: absolute;
+		top: 60px;
+		left: 0;
+		right: 0;
+		margin: auto;
+		width: 1000px;
+		height: 80px;
+		background-color: none;
+	}
+	#welcom p{
+		font-size: 50px;
+		color: rgba(67,67,67,1);
+		text-align: center;
+		line-height: 80px;
+		cursor: default;
+	}
+	#welcom p i{
+		font-size: 45px;
+		transition: .25s;
+	}
+	#welcom p i:hover{
+		cursor: pointer;
+		transition: .25s;
+		color: pink;
+	}
+	#welcom li{
+		margin: 0 auto;
+		width:400px;
+		height: 30px;
+		text-align: center;
+		line-height: 30px;
+		font-size: 25px;
+		color: grey;
+		cursor: default;
+	}
+	
+</style>
+</head>
+<body>
+	<div id="nav">
+		<li class="head"><img class="im" src="img/lzj.jpg"/><p class="time"></p></li>
+		<li class="nav_1"><p>Setting <i class="iconfont icon-shezhi"></i></p><ul>none</ul><ul>none</ul><ul>none</ul></li>
+		<li class="nav_2"><a href="secret.html"><P title="answer any question to get secret">Secret</P></a></li>
+	</div>
+	<div id="welcom"><p>Welcome To My Github Station<i class="iconfont icon-github"></i><i class="iconfont icon-shubiaozhizhen" title="https://github.com"></i></p><li>li-zhijie.github.io</li></div>
+	<div id="sorce">
+		<!--<li><i class="iconfont icon-shigong"></i><i class="iconfont icon-shigonglan"></i><i class="iconfont icon-shigonglan"></i><i class="iconfont icon-shigong"></i><p>正在建设</p></li>
+		<li><i class="iconfont icon-shigong"></i><i class="iconfont icon-shigonglan"></i><i class="iconfont icon-shigonglan"></i><i class="iconfont icon-shigong"></i><p>正在建设</p></li>
+		<li><i class="iconfont icon-shigong"></i><i class="iconfont icon-shigonglan"></i><i class="iconfont icon-shigonglan"></i><i class="iconfont icon-shigong"></i><p>正在建设</p></li>!-->
+	</div>
+	<canvas id="canvas"></canvas>	
+	<script type="text/javascript">
+		var hd = document.getElementsByClassName("head")[0];
+		var im = document.getElementsByClassName("im")[0];
+		var time = document.getElementsByClassName("time")[0];
+		
+		function getDate(){
+			window.setTimeout(function(){
+				window.requestAnimationFrame(getDate)
+				},1000/2);
+			var localDate = new Date();
+			var day = localDate.getDay();
+			var days = localDate.getDate();
+			var hour = localDate.getHours();
+			var minute = localDate.getMinutes();
+			var second = localDate.getSeconds();
+			var week = new Array("星期一","星期一","星期二","星期三","星期四","星期五","星期六","星期日");
+			if( hour < 10) hour = "0" + hour;
+			if( minute < 10) minute = "0" + minute;
+			if( second < 10) second = "0" + second;	
+			time.innerText = "李志杰 | " + week[day] + hour +" :"+minute +" :"+second ;
+
+		}
+			setInterval("getDate()",1000);
+		
+		hd.onclick = function(){
+			hd.style.width = "40px";
+			im.style.width = "40px";
+			im.style.height = "40px";
+			im.style.top = "0";
+		}
+		hd.onmouseover = function(){
+			hd.style.width = "220px";
+			im.style.width = "35px";
+			im.style.height = "35px";
+			im.style.top = "3px";
+		}
+		hd.onmouseout = function(){
+			hd.style.width = "40px";
+			im.style.width = "40px";
+			im.style.height = "40px";
+			im.style.top = "0";
+		}
+		var cli = document.getElementsByClassName("iconfont icon-shubiaozhizhen")[0];
+		cli.onclick = function(){
+			window.open("https://github.com");
+		}
+	</script>
+	<script type="text/javascript" src="test.js"></script>
+</body>
+</html>
