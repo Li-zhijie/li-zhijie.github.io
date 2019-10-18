@@ -1,0 +1,16 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "7452909",
+      "name": "感叹号",
+      "font_class": "gantanhao",
+      "unicode": "e60b",
+      "unicode_decimal": 58891
+    }
+  ]
+}
