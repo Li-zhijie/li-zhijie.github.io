@@ -1,0 +1,23 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "5535058",
+      "name": "施工栏",
+      "font_class": "shigonglan",
+      "unicode": "e608",
+      "unicode_decimal": 58888
+    },
+    {
+      "icon_id": "7606944",
+      "name": "施工",
+      "font_class": "shigong",
+      "unicode": "e715",
+      "unicode_decimal": 59157
+    }
+  ]
+}
