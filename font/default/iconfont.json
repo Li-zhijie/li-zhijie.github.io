@@ -1,0 +1,16 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "7120691",
+      "name": "鼠标指针 (1)",
+      "font_class": "shubiaozhizhen",
+      "unicode": "e61b",
+      "unicode_decimal": 58907
+    }
+  ]
+}
