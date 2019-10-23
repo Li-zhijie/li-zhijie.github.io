@@ -81,6 +81,7 @@
 		background-color: #fff;
 		transition: .5s;
 		cursor: pointer;
+		opacity: 0.7;
 	}
 	#select div::before{
 		display: block;
@@ -94,6 +95,7 @@
 		margin-top: -20px;
 		transition: .3s;
 		box-shadow: 1px 5px 10px rgba(201,201,201,0.5);
+		opacity: 1;
 	}
 	#select .middle:hover:before{
 		transition: .4s;
@@ -105,9 +107,9 @@
 	}
 	#select .university:hover:before{
 		transition: .4s;
-		background-color: green;
+		background-color: purple;
 	}
-	.qiehuan_left,.qiehuan_right{
+	.qiehuan_left{
 		position: relative;
 		margin-right: 10px;
 		float: right;
@@ -115,17 +117,15 @@
 		line-height: 50px;
 		width: 100px;
 		height: 50px;
-		cursor: pointer;		
 		background-color: none;
 	}
 	.qiehuan_left i{
 		font-size: 45px;
 		color: white;
 	}
-	.qiehuan_right i{
-		font-size: 45px;
-		color: #ccc;
-		cursor: default;
+	.qiehuan_left i:hover{
+		cursor: pointer;
+		
 	}
 	.up{
 		margin-top: -550px;
@@ -135,6 +135,12 @@
 		margin-top: 0;
 		opacity: 1;
 	}
+	#select  p{
+		text-align: center;
+		line-height: 200px;
+		font-size: 30px;
+		color: black;
+	}
 </style>
 </head>
 <body>
@@ -142,11 +148,10 @@
 	<span class="anniu"><i class="iconfont icon-anniu"></i></span>
 	<div id="tit"><p class="tit_p">关于我的问题</p></div>
 	<div id="select">	
-		<div class="middle"><a href="secret.html"><p>初中</p></a></div>
-		<div class="high"></div>
-		<div class="university"></div>
+		<a href="secret.html"><div class="middle"><p>初中</p></div></a>
+		<a herf="#"><div class="high"><p>高中</p></div></a>
+		<a href="#"><div class="university"><p>大学</p></div></a>
 	</div>
-	<span class="qiehuan_right"><i class="iconfont icon-youjiantou"></i></span>
 	<span class="qiehuan_left"><i class="iconfont icon-zuojiantou"></i></span>
 	<script type="text/javascript">
 		//返回上一页
@@ -155,15 +160,17 @@
 			window.history.go(-1);
 			//document.body.style.background = "url('img/From me img/2.jpg')";
 		}
+		//进入页面随机背景
+		var ret = Math.ceil(Math.random() * 6);
+		document.body.style.background = "url(' img/From me img/" + ret + ".jpg')";
 		//点击切换图片
-		var qiehuanright = document.getElementsByClassName('icon-youjiantou')[0];
+		//var qiehuanright = document.getElementsByClassName('icon-youjiantou')[0];
 		var qiehuanleft = document.getElementsByClassName('icon-zuojiantou')[0];
 			qiehuanleft.addEventListener('click',function(){
-				var num = Math.ceil(Math.random() * 5);
+				window.num = Math.ceil(Math.random() * 6);
 				document.body.style.background = "url(' img/From me img/" + num + ".jpg')";
-				//document.body.style.background = "url('img/From me img/3.jpg')";
 			});
-		//点击消失页面元素
+			//点击消失页面元素
 		var anniu = document.querySelector('.icon-anniu');
 		var tit_p = document.querySelector('.tit_p');
 		var middle = document.querySelector('.middle');
@@ -176,8 +183,8 @@
 				high.className = 'high up';
 				university.className = 'university up';
 				tit_p.style.opacity = '0';
-				this.style.opacity = '0.4';
-				jiantou.style.opacity = '0.4';
+				this.style.opacity = '0.35';
+				jiantou.style.opacity = '0.35';
 				mark = 1;
 			}
 			else{
