@@ -1,0 +1,16 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "10493973",
+      "name": "按钮",
+      "font_class": "anniu",
+      "unicode": "e616",
+      "unicode_decimal": 58902
+    }
+  ]
+}
