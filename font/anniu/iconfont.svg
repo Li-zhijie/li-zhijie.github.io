@@ -1,0 +1,29 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<!--
+2013-9-30: Created.
+-->
+<svg>
+<metadata>
+Created by iconfont
+</metadata>
+<defs>
+
+<font id="iconfont" horiz-adv-x="1024" >
+  <font-face
+    font-family="iconfont"
+    font-weight="500"
+    font-stretch="normal"
+    units-per-em="1024"
+    ascent="896"
+    descent="-128"
+  />
+    <missing-glyph />
+    
+    <glyph glyph-name="anniu" unicode="&#58902;" d="M512-64A448 448 0 1 1 512 832a448 448 0 0 1 0-896z m0-64A512 512 0 1 0 512 896a512 512 0 0 0 0-1024zM512 384m-256 0a256 256 0 1 1 512 0 256 256 0 1 1-512 0Z"  horiz-adv-x="1024" />
+
+    
+
+
+  </font>
+</defs></svg>
