@@ -1,3 +1,6 @@
+//进入页面随机背景
+	var ret = Math.ceil(Math.random() * 6);
+		document.body.style.background = "url(' img/From me img/" + ret + ".jpg')";
 	var start = document.getElementById("start");
 		var one = document.getElementById("one");
 		var two = document.getElementById("two");
@@ -19,7 +22,7 @@
 				mark = 0; 
 			}
 		}
-		
+		var secret = document.getElementById('secret');
 		var get1 = document.getElementsByClassName("get1")[0];
 		var first = document.getElementsByClassName("first")[0];
 		var question2 = document.getElementsByClassName("question2")[0];
@@ -64,7 +67,9 @@
 		get3.addEventListener('click',function(){
 			third = third.value;
 			if( third == "贾博然"){
-				tit.innerText = "多谢相遇！";
+				tit.innerText = "Merry Christmas";
+				start.style.opacity = '0';
+				
 				tit.style.color = "orange";
 				tit.style.fontSize = "50px";
 			}
