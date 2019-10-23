@@ -1,4 +1,4 @@
-var start = document.getElementById("start");
+	var start = document.getElementById("start");
 		var one = document.getElementById("one");
 		var two = document.getElementById("two");
 		var three = document.getElementById("three");
@@ -73,3 +73,7 @@ var start = document.getElementById("start");
 				}
 			
 		});	
+		var jiantou = document.getElementsByClassName("icon-jiantou")[0];
+			jiantou.onclick = function(){
+				window.history.go(-1);
+			}
