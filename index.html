@@ -6,8 +6,15 @@
 	<link rel="stylesheet" type="text/css" href="font/github/iconfont.css">
 	<link rel="stylesheet" type="text/css" href="font/shigong/iconfont.css">
 	<link rel="stylesheet" type="text/css" href="font/Setting/iconfont.css">
+	<link rel="stylesheet" type="text/css" href="font/touxiang/iconfont.css">
 	<style type="text/css">
-	body,ul,p{
+	body{
+		background-image: url("img/From me img/3.jpg");
+		margin: 0;
+		padding: 0;
+	}
+
+	ul,p{
 		margin:0;
 		padding:0;
 	}
@@ -24,13 +31,12 @@
 	#canvas{
 		width: 100%;
 		height: 750px;
-		background-color:rgba(246,248,250,1);
 	}
 	#nav{
 		position: absolute;
 		width: 100%;
 		height: 60px;
-		background-color: rgba(36,41,46,1);
+		/*background-color: rgba(56,61,66,1);*/
 	}
 	#nav .head{
 		position: absolute;
@@ -39,9 +45,14 @@
 		left: 40px;
 		top: 10px;
 		opacity: 1;
+		text-align: center;
+		line-height: 40px;
 		transition: .2s;
 		overflow: hidden;
-		background-color: rgba(36,41,46,1);
+		background-color: none;
+	}
+	#nav .head i{
+		font-size: 35px;
 	}
 	#nav .head p{
 		font-size: 15px;
@@ -49,22 +60,11 @@
 		margin-right: 3px;
 		line-height: 40px;
 	}
-	#nav .head img{	
-		position: absolute;
-		z-index: 1;
-		width: 40px;
-		height: 40px;
-		transition: .25s;
-	}
-	#nav .head. img:hover{
-		transition: .25s;
-	}
 	#nav .head:hover{
-		border-radius: 2px;
 		cursor: pointer;
 		border-radius: 3%;
 		box-shadow: 0 0 8px rgba(36,41,46,1) inset;
-		background-color: rgba(222,222,222,1);
+		background-color: none;
 	}
 	#nav .nav_1,#nav .nav_2{
 		position: relative;
@@ -83,7 +83,6 @@
 		color: black;
 		border-radius: 3px;
 		box-shadow: 0 0px 8px grey inset;
-		background-color: white;
 		transition: .2s;
 	}
 	#nav .nav_1,#nav .nav_2 p{
@@ -92,28 +91,27 @@
 		font-size: 17px;
 		text-align: center;
 		line-height: 40px;
-		color: white;
+		color: black;
 		transition: .2s;
 	}
 	#nav .nav_1 ul{
 		width: 100%;
 		height: 40px;
 		border-radius: 1px;
-		transition: .1s;
-		background-color: white;
+		transition: .5s;
 		
 	}
 	#nav .nav_1 ul:hover{
 		cursor: pointer;
-		transition: .1s;
-		color: pink;
-		box-shadow: 0 0 3px rgba(31,41,46,1) inset;
+		transition: .3s;
+		color: black;
+		box-shadow: 0 0 10px white inset;
 	}
 	#nav .nav_2 p:hover{
 		cursor: pointer;
 		color: black;
-		background-color: white;
-		transition: .2s;
+		box-shadow: 0 0px 8px grey inset;
+		transition: .3s;
 	}
 	#welcom{
 		position: absolute;
@@ -139,7 +137,8 @@
 	#welcom p i:hover{
 		cursor: pointer;
 		transition: .25s;
-		color: pink;
+		color: white;
+		opacity: 0.6;
 	}
 	#welcom li{
 		margin: 0 auto;
@@ -156,9 +155,9 @@
 </head>
 <body>
 	<div id="nav">
-		<li class="head"><img class="im" src="img/lzj.jpg"/><p class="time"></p></li>
+		<li class="head"><i class="iconfont icon-touxiang"></i><p class="time"></p></li>
 		<li class="nav_1"><p>设置<i class="iconfont icon-shezhi"></i></p><ul>none</ul><ul>none</ul><ul>none</ul></li>
-		<li class="nav_2"><a href="From me.html"><P title="answer any question to get secret">关于我</P></a></li>
+		<li class="nav_2"><a href="From me.html"><P title="关于我的信息">关于我</P></a></li>
 	</div>
 	<div id="welcom"><p>Welcome To My Github Station<i class="iconfont icon-github"></i><i class="iconfont icon-shubiaozhizhen" title="https://github.com"></i></p><li>li-zhijie.github.io</li></div>
 	<div id="sorce">
@@ -168,6 +167,10 @@
 	</div>
 	<canvas id="canvas"></canvas>	
 	<script type="text/javascript">
+		//进入页面随机背景
+		//var ret = Math.ceil(Math.random() * 6);
+		//	document.body.style.background = "url(' img/From me img/" + ret + ".jpg')";
+		var start = document.getElementById("start");
 		var hd = document.getElementsByClassName("head")[0];
 		var im = document.getElementsByClassName("im")[0];
 		var time = document.getElementsByClassName("time")[0];
