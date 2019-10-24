@@ -161,13 +161,13 @@
 			//document.body.style.background = "url('img/From me img/2.jpg')";
 		}
 		//进入页面随机背景
-		var ret = Math.ceil(Math.random() * 6);
+		var ret = Math.ceil(Math.random() * 7);
 		document.body.style.background = "url(' img/From me img/" + ret + ".jpg')";
 		//点击切换图片
 		//var qiehuanright = document.getElementsByClassName('icon-youjiantou')[0];
 		var qiehuanleft = document.getElementsByClassName('icon-zuojiantou')[0];
 			qiehuanleft.addEventListener('click',function(){
-				window.num = Math.ceil(Math.random() * 6);
+				window.num = Math.ceil(Math.random() * 7);
 				document.body.style.background = "url(' img/From me img/" + num + ".jpg')";
 			});
 			//点击消失页面元素
