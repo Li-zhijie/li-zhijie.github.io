@@ -1,6 +1,7 @@
 //进入页面随机背景
 	var ret = Math.ceil(Math.random() * 6);
 		document.body.style.background = "url(' img/From me img/" + ret + ".jpg')";
+		document.body.style.backgroundSize = "cover";
 	var start = document.getElementById("start");
 		var one = document.getElementById("one");
 		var two = document.getElementById("two");
@@ -45,8 +46,7 @@
 				}
 				else{
 					alert('不对 请刷新页面');
-				}
-			
+				}	
 		});
 		get2.addEventListener('click',function(){
 			second = second.value;
@@ -61,7 +61,6 @@
 				else{
 					alert('不对 请刷新页面');
 				}
-			
 		});
 		var tit = document.getElementsByClassName("tit")[0];
 		get3.addEventListener('click',function(){
@@ -69,7 +68,6 @@
 			if( third == "贾博然"){
 				tit.innerText = "Merry Christmas";
 				start.style.opacity = '0';
-				
 				tit.style.color = "orange";
 				tit.style.fontSize = "50px";
 			}
