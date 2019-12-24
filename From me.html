@@ -9,7 +9,6 @@
 <style type="text/css">
 	body{
 		background: url("img/From me img/1.jpg");
-		background-size: cover;
 		transition: 1s;
 	}
 	ul,p{
@@ -149,28 +148,29 @@
 	<span class="anniu"><i class="iconfont icon-anniu"></i></span>
 	<div id="tit"><p class="tit_p">关于我的问题</p></div>
 	<div id="select">	
-		<a href="secret.html"><div class="middle"><p>初中</p></div></a>
+		<a href="#"><div class="middle"><p>初中</p></div></a>
+		<!--<a href="secret.html"><div class="middle"><p>初中</p></div></a>-->
 		<a href="#"><div class="high"><p>高中</p></div></a>
 		<a href="#"><div class="university"><p>大学</p></div></a>
 	</div>
-	<span class="qiehuan_left"><i class="iconfont icon-zuojiantou"></i></span>
+	<span class="qiehuan_left"><i title="Next image"class="iconfont icon-youjiantou"></i></span>
 	<script type="text/javascript">
 		//返回上一页
 		var jiantou = document.getElementsByClassName('icon-jiantou')[0];
 		jiantou.onclick = function(){
 			window.history.go(-1);
 			//document.body.style.background = "url('img/From me img/2.jpg')";
-		}
+		} 
 		//进入页面随机背景
-		var ret = Math.ceil(Math.random() * 13);
+		
+		var ret = Math.ceil(Math.random() * 16);
 		document.body.style.background = "url(' img/From me img/" + ret + ".jpg')";
 		//点击切换图片
 		//var qiehuanright = document.getElementsByClassName('icon-youjiantou')[0];
-		var qiehuanleft = document.getElementsByClassName('icon-zuojiantou')[0];
+		var qiehuanleft = document.getElementsByClassName('icon-youjiantou')[0];
 			qiehuanleft.addEventListener('click',function(){
 				window.num = Math.ceil(Math.random() * 16);
 				document.body.style.background = "url(' img/From me img/" + num + ".jpg')";
-				document.body.style.backgroundSize = "cover";
 			});
 			//点击消失页面元素
 		var anniu = document.querySelector('.icon-anniu');
@@ -199,6 +199,17 @@
 				mark = 0;
 			}
 		}
+		//点击无访问
+		middle.onclick = function(){
+			alert("无权限访问!");
+		}
+		high.onclick = function(){
+			alert("无权限访问!");
+		}
+		university.onclick = function(){
+			alert("无权限访问!");
+		}
+		document.body.style.backgroundSize = "cover";
 	</script>
 </body>
 </html>
