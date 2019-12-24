@@ -9,11 +9,11 @@
 	<link rel="stylesheet" type="text/css" href="font/touxiang/iconfont.css">
 	<style type="text/css">
 	body{
+
 		background-image: url("img/From me img/3.jpg");
 		margin: 0;
 		padding: 0;
 	}
-
 	ul,p{
 		margin:0;
 		padding:0;
@@ -30,7 +30,7 @@
 	}
 	#canvas{
 		width: 100%;
-		height: 750px;
+		height: 100%;
 	}
 	#nav{
 		position: absolute;
@@ -98,8 +98,7 @@
 		width: 100%;
 		height: 40px;
 		border-radius: 1px;
-		transition: .5s;
-		
+		transition: .5s;	
 	}
 	#nav .nav_1 ul:hover{
 		cursor: pointer;
@@ -150,7 +149,6 @@
 		color: grey;
 		cursor: default;
 	}
-	
 </style>
 </head>
 <body>
@@ -161,20 +159,28 @@
 	</div>
 	<div id="welcom"><p>Welcome To My Github Station<i class="iconfont icon-github"></i><i class="iconfont icon-shubiaozhizhen" title="https://github.com"></i></p><li>li-zhijie.github.io</li></div>
 	<div id="sorce">
-		<!--<li><i class="iconfont icon-shigong"></i><i class="iconfont icon-shigonglan"></i><i class="iconfont icon-shigonglan"></i><i class="iconfont icon-shigong"></i><p>正在建设</p></li>
-		<li><i class="iconfont icon-shigong"></i><i class="iconfont icon-shigonglan"></i><i class="iconfont icon-shigonglan"></i><i class="iconfont icon-shigong"></i><p>正在建设</p></li>
-		<li><i class="iconfont icon-shigong"></i><i class="iconfont icon-shigonglan"></i><i class="iconfont icon-shigonglan"></i><i class="iconfont icon-shigong"></i><p>正在建设</p></li>!-->
 	</div>
 	<canvas id="canvas"></canvas>	
 	<script type="text/javascript">
+		var system ={};
+  	    var p = navigator.platform;
+        console.log(p)
+        system.win = p.indexOf("Win") == 0;
+        system.mac = p.indexOf("Mac") == 0;
+        system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
+        if(system.win||system.mac||system.xll){//如果是电脑跳转到
+       		//window.location.href="";
+        // alert(888)
+        }else{  //如果是手机,跳转到
+         window.location.href="Phone.html";
+        }
 		//进入页面随机背景
 		//var ret = Math.ceil(Math.random() * 6);
 		//	document.body.style.background = "url(' img/From me img/" + ret + ".jpg')";
 		var start = document.getElementById("start");
 		var hd = document.getElementsByClassName("head")[0];
 		var im = document.getElementsByClassName("im")[0];
-		var time = document.getElementsByClassName("time")[0];
-		
+		var time = document.getElementsByClassName("time")[0];	
 		function getDate(){
 			window.setTimeout(function(){
 				window.requestAnimationFrame(getDate)
@@ -190,10 +196,9 @@
 			if( minute < 10) minute = "0" + minute;
 			if( second < 10) second = "0" + second;	
 			time.innerText = "李志杰 | " + week[day] + hour +" :"+minute +" :"+second ;
-
 		}
-			setInterval("getDate()",1000);
-		
+			
+		setInterval("getDate()",1000);
 		hd.onclick = function(){
 			hd.style.width = "40px";
 			im.style.width = "40px";
