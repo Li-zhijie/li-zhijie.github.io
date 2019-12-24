@@ -1,5 +1,5 @@
 //进入页面随机背景
-	var ret = Math.ceil(Math.random() * 6);
+	var ret = Math.ceil(Math.random() * 16);
 		document.body.style.background = "url(' img/From me img/" + ret + ".jpg')";
 		document.body.style.backgroundSize = "cover";
 	var start = document.getElementById("start");
