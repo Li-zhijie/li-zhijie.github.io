@@ -35,8 +35,8 @@
 		var tip3 = document.getElementsByClassName("tip3")[0];
 		var get3 = document.getElementsByClassName("get3")[0];
 		get1.addEventListener('click',function(){
-			first = first.value;
-			if( first == "六中分校"){
+			first_a = first.value;
+			if( first_a == "六中分校"){
 				alert('下一道题');
 					one.style.margin = "100px auto";
 					question2.style.opacity = "1";
