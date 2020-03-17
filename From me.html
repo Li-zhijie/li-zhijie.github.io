@@ -9,6 +9,8 @@
 <style type="text/css">
 	body{
 		background: url("img/From me img/1.jpg");
+		background-repeat: no-repeat;
+		background-attachment: fixed; 
 		transition: 1s;
 	}
 	ul,p{
@@ -60,7 +62,7 @@
 		line-height: 50px;
 		font-size: 30px;
 		cursor: default;
-		text-shadow: 5px 5px 10px white;
+		text-shadow: 0px 0px 5px white;
 		background-color: none;
 		transition: .3s;
 	}
@@ -78,15 +80,15 @@
 		width: 250px;
 		height: 300px;
 		box-shadow: 1px 5px 10px #000; 
-		background-color: #fff;
+		background-color: ;
 		transition: .5s;
 		cursor: pointer;
-		opacity: 0.7;
+		opacity: 0.85;
 	}
 	#select div::before{
 		display: block;
 		content: '';
-		width: 250px;
+		width: 0px;
 		height: 7px;
 		background-color: #ccc;
 		transition: .3s;
@@ -96,16 +98,20 @@
 		transition: .3s;
 		box-shadow: 1px 5px 10px rgba(201,201,201,0.5);
 		opacity: 1;
-	}
+		background-color: rgba(255,255,255,0.5);
+	}	
 	#select .middle:hover:before{
+		width: 250px;
 		transition: .4s;
 		background-color: orange;
 	}
 	#select .high:hover:before{
+		width: 250px;
 		transition: .4s;
 		background-color: blue;
 	}
 	#select .university:hover:before{
+		width: 250px;
 		transition: .4s;
 		background-color: purple;
 	}
@@ -146,12 +152,12 @@
 <body>
 	<span class="left_jiantou"><i class="iconfont icon-jiantou" title="返回上一页"></i></span>
 	<span class="anniu"><i class="iconfont icon-anniu"></i></span>
-	<div id="tit"><p class="tit_p">关于我的问题</p></div>
+	<div id="tit"><p class="tit_p">关于我</p></div>
 	<div id="select">	
-		<a href="#"><div class="middle"><p>初中</p></div></a>
+		<a href="#"><div class="middle"></div></a>
 		<!--<a href="secret.html"><div class="middle"><p>初中</p></div></a>-->
-		<a href="#"><div class="high"><p>高中</p></div></a>
-		<a href="#"><div class="university"><p>大学</p></div></a>
+		<a href="#"><div class="high"></div></a>
+		<a href="#"><div class="university"></div></a>
 	</div>
 	<span class="qiehuan_left"><i title="Next image"class="iconfont icon-youjiantou"></i></span>
 	<script type="text/javascript">
@@ -159,7 +165,7 @@
 		var jiantou = document.getElementsByClassName('icon-jiantou')[0];
 		jiantou.onclick = function(){
 			window.history.go(-1);
-			//document.body.style.background = "url('img/From me img/2.jpg')";
+			//document.body.style.bac = "urkgroundl('img/From me img/2.jpg')";
 		} 
 		//进入页面随机背景
 		
@@ -184,7 +190,7 @@
 				middle.className = 'middle up';
 				high.className = 'high up';
 				university.className = 'university up';
-				tit_p.style.opacity = '0';
+				tit_p.style.display = 'none';
 				this.style.opacity = '0.35';
 				jiantou.style.opacity = '0.35';
 				mark = 1;
@@ -193,7 +199,7 @@
 				middle.className = 'middle down';
 				high.className = 'high down';
 				university.className = 'university down';
-				tit_p.style.opacity = '1';
+				tit_p.style.display = 'block';
 				this.style.opacity = '1';
 				jiantou.style.opacity = '1';
 				mark = 0;
@@ -209,7 +215,6 @@
 		university.onclick = function(){
 			alert("无权限访问!");
 		}
-		document.body.style.backgroundSize = "cover";
 	</script>
 </body>
 </html>
