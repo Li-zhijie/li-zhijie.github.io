@@ -7,13 +7,18 @@
 	<link rel="stylesheet" type="text/css" href="font/shigong/iconfont.css">
 	<link rel="stylesheet" type="text/css" href="font/Setting/iconfont.css">
 	<link rel="stylesheet" type="text/css" href="font/touxiang/iconfont.css">
+	<link rel="stylesheet" type="text/css" href="font/bofang/iconfont.css">
+	<link rel="stylesheet" type="text/css" href="font/zanting/iconfont.css">
+	<link rel="stylesheet" type="text/css" href="font/new-youjiantou/iconfont.css">
+	<link rel="stylesheet" type="text/css" href="font/new-zuojiantou/iconfont.css">
+	<link rel="stylesheet" type="text/css" href="font/chehuijiantou/iconfont.css">
 	<style type="text/css">
 	body{
-
 		background-image: url("img/From me img/14.jpg");
 		background-size: cover;
 		margin: 0;
 		padding: 0;
+		scrollbar-arrow-color: #f4ae21; 
 	}
 	ul,p{
 		margin:0;
@@ -37,10 +42,85 @@
 		position: absolute;
 		width: 100%;
 		height: 60px;
-		/*background-color: rgba(56,61,66,1);*/
+		background-color: none;
+	}
+	#nav .musicbox{
+		position: absolute;
+		text-align: center;
+		width: 50px;
+		height: 45px;
+		right: 210px;
+		top:10px;
+		overflow: hidden;
+		border-radius:0px;
+		line-height: 45px;
+		transition: .3s;
+		border-right: 1px solid #858585;
+	}
+	#nav .musicbox input{
+		outline: medium;
+		margin-top: -17px;
+		text-align:center; 
+		vertical-align:middle;
+		font-size:17;
+		color:initial;
+		width: 180px;
+		height:28px;
+		border-right-width: 0;
+		border-left-width: 0;
+		border-top-width: 0; 
+		border-bottom:1px solid #000;
+		background-color: transparent;/*去掉input背景*/
+	}
+	#nav .musicbox input::-webkit-input-placeholder{
+		text-transform:uppercase;
+		color: green;
+	}
+	#nav .musicbox i{
+		-webkit-user-select:none;
+		font-size: 35px;
+		cursor: pointer;	
+	}
+	#nav .musicbox #choose{
+		position: absolute;
+		z-index: 10;
+		top:50px;
+		left:72px;
+		overflow-x: hidden;
+		overflow-y: auto;
+		width: 250px;
+		height: 220px;
+		background-color: ;
+	}
+	/*滚动美好滑块的设置*/
+	#nav .musicbox #choose::-webkit-scrollbar{
+   		width:4px;
+	}
+	#nav .musicbox #choose::-webkit-scrollbar-track{
+    	-webkit-box-shadow:inset 0 0 6px rgba(255,255,255,0.5);
+	}
+	#nav .musicbox #choose::-webkit-scrollbar-thumb{
+		background:rgba(0,0,0,0.1);
+	    -webkit-box-shadow:inset 0 0 6px rgba(39,167,148);
+	}
+
+	#nav .musicbox #choose li{
+		margin:7px;
+		width: 230px;
+		height: 45px;
+		font-size:18px;
+		line-height: 45px;
+		box-shadow: 2px 2px 4px rgba(36,41,47,0.3);
+		background-color: rgba(232,232,232,0.3);
+		cursor: pointer;
+		transition: .3s;
+	}
+	#nav .musicbox #choose li:hover{
+		color: green;
+		transition: .3s;
 	}
 	#nav .head{
-		position: absolute;
+		position: relative;
 		width: 40px;
 		height: 40px;
 		left: 40px;
@@ -64,34 +144,41 @@
 	#nav .head:hover{
 		cursor: pointer;
 		border-radius: 3%;
-		box-shadow: 0 0 8px rgba(36,41,46,1) inset;
+		box-shadow: 2px 3px 8px rgba(36,41,46,0.8);
 		background-color: none;
 	}
+
 	#nav .nav_1,#nav .nav_2{
-		position: relative;
-		float: right;
-		right: 30px;
+		position: absolute;
 		top: 10px;
-		width: 100px;
-		height: 40px;
+		width: 80px;
+		height: 45px;
 		overflow: hidden;
-		background-color: none;
+	}
+	#nav .nav_1{
+		border-left: 1px solid #858585;
+		right: 50px;
+	}
+	#nav .nav_2{
+		right: 130px;
+		border-right:1px solid #858585;
 	}
 	#nav .nav_1:hover{
 		cursor: default;
 		z-index: 22;
-		height: 163px;
+		height: 160px;
 		color: black;
 		border-radius: 3px;
-		box-shadow: 0 0px 8px grey inset;
+		border:0;
+		box-shadow: 0 0px 8px grey;
 		transition: .2s;
 	}
 	#nav .nav_1,#nav .nav_2 p{
-		width: 100px;
+		width: 80px;
 		height: 40px;
 		font-size: 17px;
 		text-align: center;
-		line-height: 40px;
+		line-height: 45px;
 		color: black;
 		transition: .2s;
 	}
@@ -99,19 +186,20 @@
 		width: 100%;
 		height: 40px;
 		border-radius: 1px;
-		transition: .5s;	
+		transition: .5s;
+			
 	}
 	#nav .nav_1 ul:hover{
 		cursor: pointer;
-		transition: .3s;
+		transition: .2s;
 		color: black;
-		box-shadow: 0 0 10px white inset;
+		box-shadow: 0 0 7px #858585 inset;
 	}
-	#nav .nav_2 p:hover{
+	#nav .nav_2:hover{
 		cursor: pointer;
 		color: black;
-		box-shadow: 0 0px 8px grey inset;
-		transition: .3s;
+		box-shadow: 1px 2px 6px grey;
+		transition: .5s;
 	}
 	#welcom{
 		position: absolute;
@@ -155,17 +243,42 @@
 <body>
 	<div id="nav">
 		<li class="head"><i class="iconfont icon-touxiang"></i><p class="time"></p></li>
+	<li class="musicbox">
+		<i class="iconfont icon-jiantou" id="show" title="显示"></i>
+		<i class="iconfont icon-bofang" id="bofang" title="播放">
+		<audio  id="music" autoplay="autoplay"/>
+			<source  id="mp3" src="mp3/陈奕迅-单车.mp3"  type="audio/mpeg">
+			Your browser does not support the audio element.
+		</audio></i>
+		<input id="input" type="text" name="" value="陈奕迅-单车" placeholder="陈奕迅-单车" />
+		<i class="iconfont icon-chehuijiantou-copy" id=getText></i>		
+
+		<ul id="choose">
+			<li>陈奕迅-单车</li>
+			<li>陈奕迅-等你爱我</li>
+			<li>陈奕迅-十年</li>
+			<li>陈奕迅-十面埋伏</li>			
+			<li>陈奕迅-K歌之王</li>
+			<li>陈奕迅-黑洞</li>
+			<li>朝の光を感し_て</li>
+			<li>秋思</li>
+			<li>绊-Ties of mind</li>	
+			<li>少年の梦</li>
+		</ul>
+
+	</li>
 		<li class="nav_1"><p>设置<i class="iconfont icon-shezhi"></i></p><ul>none</ul><ul>none</ul><ul>none</ul></li>
-		<li class="nav_2"><a href="From me.html"><P title="关于我的信息">关于我</P></a></li>
+		<li class="nav_2"><a href="From me.html"><p title="关于我的信息">关于我</p></a></li>
 	</div>
 	<div id="welcom"><p>Welcome To My Github Station<i class="iconfont icon-github"></i><i class="iconfont icon-shubiaozhizhen" title="https://github.com"></i></p><li>li-zhijie.github.io</li></div>
 	<div id="sorce">
 	</div>
 	<canvas id="canvas"></canvas>	
 	<script type="text/javascript">
+		/***********判断各种访问浏览器****************************/
 		var system ={};
   	    var p = navigator.platform;
-        console.log(p)
+       // console.log(p)
         system.win = p.indexOf("Win") == 0;
         system.mac = p.indexOf("Mac") == 0;
         system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
@@ -178,14 +291,16 @@
 		//进入页面随机背景
 		//var ret = Math.ceil(Math.random() * 6);
 		//	document.body.style.background = "url(' img/From me img/" + ret + ".jpg')";
+		
+
+		//日期
 		var start = document.getElementById("start");
 		var hd = document.getElementsByClassName("head")[0];
-		var im = document.getElementsByClassName("im")[0];
 		var time = document.getElementsByClassName("time")[0];	
 		function getDate(){
 			window.setTimeout(function(){
 				window.requestAnimationFrame(getDate)
-				},1000/2);
+				},10);
 			var localDate = new Date();
 			var day = localDate.getDay();
 			var days = localDate.getDate();
@@ -200,28 +315,128 @@
 		}
 			
 		setInterval("getDate()",1000);
-		hd.onclick = function(){
-			hd.style.width = "40px";
-			im.style.width = "40px";
-			im.style.height = "40px";
-			im.style.top = "0";
-		}
+
+	
 		hd.onmouseover = function(){
 			hd.style.width = "220px";
-			im.style.width = "35px";
-			im.style.height = "35px";
-			im.style.top = "3px";
 		}
 		hd.onmouseout = function(){
 			hd.style.width = "40px";
-			im.style.width = "40px";
-			im.style.height = "40px";
-			im.style.top = "0";
 		}
 		var cli = document.getElementsByClassName("iconfont icon-shubiaozhizhen")[0];
 		cli.onclick = function(){
 			window.open("https://github.com");
 		}
+		
+		//播放{}
+		var bofang = document.getElementById("bofang");
+		var music = document.getElementById("music");
+		var musicBox = document.getElementsByClassName("musicbox")[0];
+		var show = document.getElementById("show");
+		var getText = document.getElementById("getText");
+		var mp3 = document.getElementById("mp3");
+
+		function hiddOn(){
+			var mark = true;
+			show.onclick = function(){
+				if(mark === true){
+					mark = false;
+					show.className = "iconfont icon-jiantou2";
+					show.title = "隐藏";
+					musicBox.style.width = "320px";
+					musicBox.style.boxShadow = "-3px 3px 8px rgba(36,41,46,0.6)";
+
+				}
+				else{
+					//music.currentTime = 0;
+					mark = true;
+					musicBox.style.width = "50px";
+					musicBox.style.boxShadow = "";
+					show.className = "iconfont icon-jiantou";
+					show.title = "显示";
+					musicBox.style.overflow = "hidden";
+				}
+			}
+		}
+		hiddOn();
+
+		//播放音乐||暂停
+		function musicOn(){
+			var blur = true;
+			bofang.onclick = function(){
+				
+				if(blur === true){
+					blur = false;
+					music.play();
+					bofang.className = "iconfont icon-zanting";	
+					console.log(blur);
+				}
+				else if(blur === false){
+					//music.currentTime = 0;
+					blur = true;
+					bofang.className = "iconfont icon-bofang";
+					music.pause();
+				}
+			}
+		}
+		musicOn();
+
+		//获取点击input焦点
+		function focu(){
+			var clickInput = document.getElementById("input");
+			var mark = true;
+			clickInput.onclick = function(){
+				console.log(clickInput);
+				if(mark ===true){
+					musicBox.style.overflow = "visible";
+					mark = false;
+				}
+				else{
+					musicBox.style.overflow = "hidden";
+					mark = true;
+				}
+			}
+		}
+		focu();
+		//把li的值传到input的value
+		var oUl = document.getElementById("choose");
+		var choose = oUl.getElementsByTagName("li");
+		function chooseMusic(){
+			var input = document.getElementById("input");
+			for(var i = 0 ; i < choose.length ; i++){
+				choose[i].index = i;
+				choose[i].onclick = function(){
+					var tex = this.innerText;
+					//alert(tex);
+					input.value = tex;
+				}
+			}
+		}
+		chooseMusic();
+		//input选择或输入歌曲判断value
+		function inputText(){
+			getText.onclick = function(){
+				var inPut = document.getElementById("input").value;
+				var song = ["陈奕迅-单车","陈奕迅-等你爱我","陈奕迅-十年","陈奕迅-十面埋伏","陈奕迅-K歌之王","陈奕迅-黑洞","朝の光を感し_て","秋思","绊-Ties of mind","少年の梦"];
+				for(var i = 0 ; i < song.length ; i++){
+					//song[i].index = i;
+					if(inPut == song[i]){
+						music.pause();
+						music.currentTime = 0;
+						music.src = "mp3/" + song[i] + ".mp3";
+						bofang.className = "iconfont icon-zanting";
+						musicBox.style.overflow = "hidden";
+						var inputPlaceholderText = document.getElementById("input").setAttribute("placeholder",song[i]);
+					}
+				}
+			}
+		}
+		inputText();
+		//播放结束后图标改回播放
+		music.addEventListener('ended', function () {  
+       		bofang.className = "iconfont icon-bofang";
+    	}, false);
+
 	</script>
 	<script type="text/javascript" src="test.js"></script>
 </body>
