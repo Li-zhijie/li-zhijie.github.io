@@ -19,7 +19,7 @@
   // 鼠标活动时，获取鼠标坐标
   var warea = {x: null, y: null, max: 22500};
   window.onmousemove = function(e) {
-    e = e || window.event;
+    //e = e || window.event;
 
     warea.x = e.clientX;
     warea.y = e.clientY;
@@ -35,15 +35,15 @@
   for (var i = 0; i < 250; i++) {
     var x = Math.random() * canvas.width;
     var y = Math.random() * canvas.height;
-    var xa = Math.random() * 2 - 1;
-    var ya = Math.random() * 2 - 1;
+    var xa = Math.random() * 2.5 - 1;
+    var ya = Math.random() * 2.5 - 1;
 
     dots.push({
       x: x,
       y: y,
       xa: xa,
       ya: ya,
-      max: 6500
+      max: 7500
     })
   }
 
