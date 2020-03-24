@@ -5,13 +5,15 @@
 	<link rel="stylesheet" type="text/css" href="font/default/iconfont.css">
 	<link rel="stylesheet" type="text/css" href="font/github/iconfont.css">
 	<link rel="stylesheet" type="text/css" href="font/shigong/iconfont.css">
-	<link rel="stylesheet" type="text/css" href="font/setting/iconfont.css">
+	<link rel="stylesheet" type="text/css" href="font/Setting/iconfont.css">
 	<link rel="stylesheet" type="text/css" href="font/touxiang/iconfont.css">
 	<link rel="stylesheet" type="text/css" href="font/bofang/iconfont.css">
 	<link rel="stylesheet" type="text/css" href="font/zanting/iconfont.css">
 	<link rel="stylesheet" type="text/css" href="font/new-youjiantou/iconfont.css">
 	<link rel="stylesheet" type="text/css" href="font/new-zuojiantou/iconfont.css">
 	<link rel="stylesheet" type="text/css" href="font/chehuijiantou/iconfont.css">
+	<link rel="stylesheet" type="text/css" href="font/touxiang_suo/iconfont.css">
+	<link rel="stylesheet" type="text/css" href="font/cuowu/iconfont.css">
 	<style type="text/css">
 	body{
 		background-image: url("img/From me img/14.jpg");
@@ -20,7 +22,7 @@
 		padding: 0;
 		scrollbar-arrow-color: #f4ae21; 
 	}
-	ul,p{
+	ul,p,h1{
 		margin:0;
 		padding:0;
 	}
@@ -40,6 +42,7 @@
 	}
 	#nav{
 		position: absolute;
+		display: none;
 		width: 100%;
 		height: 60px;
 		background-color: none;
@@ -73,7 +76,6 @@
 		background-color: transparent;/*去掉input背景*/
 	}
 	#nav .musicbox input::-webkit-input-placeholder{
-		text-transform:uppercase;
 		color: green;
 	}
 	#nav .musicbox i{
@@ -92,7 +94,7 @@
 		height: 220px;
 		background-color: ;
 	}
-	/*滚动美好滑块的设置*/
+	/*滚动滑块的设置*/
 	#nav .musicbox #choose::-webkit-scrollbar{
    		width:4px;
 	}
@@ -203,6 +205,7 @@
 	}
 	#welcom{
 		position: absolute;
+		display: none;
 		top: 60px;
 		left: 0;
 		right: 0;
@@ -238,6 +241,84 @@
 		color: grey;
 		cursor: default;
 	}
+	#login_box h1{
+		font-size: 35px;
+		background: linear-gradient(to right, red 30%, yellow,pink );
+        -webkit-background-clip: text;
+        color: transparent;
+		text-align: center;
+		cursor: default;
+	}
+	#login_box{
+		position: fixed;
+		margin: 300px 0px 0 35%;
+		width: 600px;
+		height: 250px;
+		border-radius: 10px;
+		/*background-color: rgba(145,151,145,0.7);*/
+		background:linear-gradient( rgba(145,151,145,0.7) 60%, #ccc);
+		box-shadow: 0px 5px 10px #454444;
+	}
+	#login_box #login_text{
+		width: 400px;
+		height: 100px;
+		margin:10px auto;
+		background-color: none;
+	}
+	#login_box #login_text li{
+		display: black;
+		margin:0 auto;
+		width: 0px;
+		height: 1px;
+		background-color: white;
+		transition: 0.3s;
+	}
+	#login_box #login_text i{
+		margin:2px 30px 0 0;
+		font-size: 25px;
+		color: rgba(222,222,222,0.8);
+	}
+	#login_box #login_text input{
+		outline: medium;
+		width: 300px;
+		height: 50px;
+		padding-top: 20px; 
+		font-size: 18px;
+		text-align: bottom;
+		border-right-width: 0;
+		border-left-width: 0;
+		border-top-width: 0; 
+		border-bottom:0;
+		background-color: transparent;
+	}
+	#login_box #login_text .iconfont.icon-cuowu{
+		display: none;
+		font-size: 30px;
+		color: red;
+	}
+	#login_box #login_text input:focus{
+		color:white;
+	}
+	#login_box #login_text input::-webkit-input-placeholder{
+		color: white;
+	}
+	#login_box #button{
+		margin:40px auto;
+		width: 300px;
+		height: 40px;
+		font-size: 22px;
+		text-align: center;
+		line-height: 40px;
+		color: white;
+		background:linear-gradient(to left ,red,pink,orange 60%,#72e3e3);
+		cursor: pointer;
+		border-radius: 30px;
+		transition: 1s;
+	}
+	#login_box #button:hover{
+        color: black;
+		transition: 1s;
+	}
 </style>
 </head>
 <body>
@@ -270,10 +351,28 @@
 		<li class="nav_1"><p>设置<i class="iconfont icon-shezhi"></i></p><ul>none</ul><ul>none</ul><ul>none</ul></li>
 		<li class="nav_2"><a href="From me.html"><p title="关于我的信息">关于我</p></a></li>
 	</div>
-	<div id="welcom"><p>Welcome To My Github Station<i class="iconfont icon-github"></i><i class="iconfont icon-shubiaozhizhen" title="https://github.com"></i></p><li>li-zhijie.github.io</li></div>
+	<div id="welcom">
+		<p>Welcome To My Github Station
+			<i class="iconfont icon-github"></i>
+			<i class="iconfont icon-shubiaozhizhen" title="https://github.com"></i>
+		</p>
+			<li>li-zhijie.github.io</li>
+	</div>
 	<div id="sorce">
 	</div>
-	<canvas id="canvas"></canvas>	
+	<div id="login_box">
+		<h1>Login</h1>
+		<div id="login_text">
+			<i class="iconfont icon-touxiang"></i><input id="user" type="text"placeholder="Username"/>
+				<i class="iconfont icon-cuowu" ></i><li class="user1"></li>
+			<i class="iconfont icon-suo"></i><input id="password" type="password" placeholder="Password" />
+				<i class="iconfont icon-cuowu"></i><li class="pass1"></li>
+		</div>
+		<div id="button">Sign  in</div>
+	</div>
+	<canvas id="canvas"></canvas>
+	<script type="text/javascript" src="js/test.js"></script>	
+	<script type="text/javascript" src="js/new_ajax.js"></script>
 	<script type="text/javascript">
 		/***********判断各种访问浏览器****************************/
 		var system ={};
@@ -314,8 +413,8 @@
 			time.innerText = "李志杰 | " + week[day] + hour +" :"+minute +" :"+second ;
 		}
 			
-		setInterval("getDate()",1000);
-
+		setInterval("getDate",1000);
+		getDate();
 	
 		hd.onmouseover = function(){
 			hd.style.width = "220px";
@@ -328,6 +427,12 @@
 			window.open("https://github.com");
 		}
 		
+		var github_ajax = document.getElementsByClassName("iconfont icon-github")[0];
+		github_ajax.onclick = function(){
+			ajax("a.txt",function(str){
+				alert(str);
+			})
+		}
 		//播放{}
 		var bofang = document.getElementById("bofang");
 		var music = document.getElementById("music");
@@ -386,7 +491,7 @@
 			var clickInput = document.getElementById("input");
 			var mark = true;
 			clickInput.onclick = function(){
-				console.log(clickInput);
+				//console.log(clickInput);
 				if(mark ===true){
 					musicBox.style.overflow = "visible";
 					mark = false;
@@ -437,7 +542,64 @@
        		bofang.className = "iconfont icon-bofang";
     	}, false);
 
+		var login_box = document.getElementById("login_box");
+		var login_text = document.getElementById("login_text");
+		var li_before = login_text.getElementsByTagName("li");
+		var input_all = login_text.getElementsByTagName("input");
+		//var user1 = input_all[0].value;
+		//var pass1 = input_all[1].value;
+		function login(){
+			var mark = true;
+			for(var i = 0 ; i < input_all.length ; i++){
+				input_all[i].index = i;
+					input_all[i].onfocus = function(){
+							var x = this.index;
+							li_before[x].style.width = "300px";
+						}
+						input_all[i].onblur = function(){
+							var x = this.index;
+							li_before[x].style.width = "0";
+						}
+					}
+				}
+		login();
+
+		var nav = document.getElementById("nav");
+		var welcom = document.getElementById("welcom");
+		var button = document.getElementById("button");
+		var cuowu_0 = document.getElementsByClassName("iconfont icon-cuowu")[0];
+		var cuowu_1 = document.getElementsByClassName("iconfont icon-cuowu")[1];
+		function check(){
+			button.onclick = document.onkeydown = function(){
+				var user1 = input_all[0].value;
+				var pass1 = input_all[1].value;
+				cuowu_0.style.display = "none";
+				cuowu_1.style.display = "none";
+				if((user1 === "admin" || user1 === "root") && pass1 === "lzj"){
+					login_box.style.display = "none";
+					nav.style.display = "block";
+					welcom.style.display = "block";
+				}
+				else if(user1 != "admin" && pass1 != "lzj"){
+					cuowu_0.style.display = "inline";
+					cuowu_1.style.display = "inline";
+				}
+				else if(user1 != "admin"){
+					cuowu_0.style.display = "inline";
+				}
+				else if(pass1 != "lzj"){
+					cuowu_1.style.display = "inline";
+				}
+			}
+		}
+		check();
+		document.onkeydown=function(event){
+ 			var e = event || window.event || arguments.callee.caller.arguments[0];
+ 			if(e && e.keyCode==13){
+ 				check();
+ 			}
+ 		}
 	</script>
-	<script type="text/javascript" src="test.js"></script>
+	
 </body>
 </html>
