@@ -5,7 +5,7 @@
 	<link rel="stylesheet" type="text/css" href="font/default/iconfont.css">
 	<link rel="stylesheet" type="text/css" href="font/github/iconfont.css">
 	<link rel="stylesheet" type="text/css" href="font/shigong/iconfont.css">
-	<link rel="stylesheet" type="text/css" href="font/Setting/iconfont.css">
+	<link rel="stylesheet" type="text/css" href="font/setting/iconfont.css">
 	<link rel="stylesheet" type="text/css" href="font/touxiang/iconfont.css">
 	<link rel="stylesheet" type="text/css" href="font/bofang/iconfont.css">
 	<link rel="stylesheet" type="text/css" href="font/zanting/iconfont.css">
@@ -427,12 +427,6 @@
 			window.open("https://github.com");
 		}
 		
-		var github_ajax = document.getElementsByClassName("iconfont icon-github")[0];
-		github_ajax.onclick = function(){
-			ajax("a.txt",function(str){
-				alert(str);
-			})
-		}
 		//播放{}
 		var bofang = document.getElementById("bofang");
 		var music = document.getElementById("music");
@@ -575,21 +569,26 @@
 				var pass1 = input_all[1].value;
 				cuowu_0.style.display = "none";
 				cuowu_1.style.display = "none";
-				if((user1 === "admin" || user1 === "root") && pass1 === "lzj"){
-					login_box.style.display = "none";
-					nav.style.display = "block";
-					welcom.style.display = "block";
-				}
-				else if(user1 != "admin" && pass1 != "lzj"){
-					cuowu_0.style.display = "inline";
-					cuowu_1.style.display = "inline";
-				}
-				else if(user1 != "admin"){
-					cuowu_0.style.display = "inline";
-				}
-				else if(pass1 != "lzj"){
-					cuowu_1.style.display = "inline";
-				}
+				ajax('login.txt',function(str){
+					var login_arr = eval(str);
+				    var login_user = login_arr[0];
+				    var login_pass = login_arr[1];
+				    if((user1 === login_user) && pass1 === login_pass){
+						login_box.style.display = "none";
+						nav.style.display = "block";
+						welcom.style.display = "block";
+					}
+					else if(user1 != login_user && pass1 != login_pass){
+						cuowu_0.style.display = "inline";
+						cuowu_1.style.display = "inline";
+				    }
+				    else if(user1 != login_user){
+						cuowu_0.style.display = "inline";
+				    }
+				    else if(pass1 != login_pass){
+						cuowu_1.style.display = "inline";
+				    }
+				});
 			}
 		}
 		check();
